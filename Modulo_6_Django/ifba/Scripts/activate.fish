@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'C:\Users\andre\OneDrive\Documents\Back_end_python\Modulo_6_Django\ifba'
+set -gx VIRTUAL_ENV 'C:\Users\andreborges\OneDrive\Documents\Back_end_python\Modulo_6_Django\ifba'
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"Scripts $PATH
