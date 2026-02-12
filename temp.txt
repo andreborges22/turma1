@@ -1,0 +1,5 @@
+        {% for aluno in alunos %}
+            <li>
+                {{ aluno.id }} - {{ aluno.nome }}
+            </li>
+        {% endfor %}
