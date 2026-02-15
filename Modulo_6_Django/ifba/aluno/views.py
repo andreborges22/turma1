@@ -10,25 +10,28 @@ def home(request):
 def cadastrar_aluno(request):
     nome = request.POST.get("nome")
     email = request.POST.get("email")
-    Aluno.objects.create(nome=nome, email=email)
+    nascimento = request.POST.get("nascimento")
+    Aluno.objects.create(nome=nome, email=email, nascimento=nascimento)
     alunos = Aluno.objects.all()
-    return render(request, 'index.html', {"alunos": alunos})
+    return redirect(home)
 
 
 def criar_aluno(request):
     nome = request.POST.get("nome")
     email = request.POST.get("email")
-    Aluno.objects.create(nome=nome, email=email)
+    nascimento = request.POST.get("nascimento")
+    Aluno.objects.create(nome=nome, email=email, nascimento=nascimento)
     alunos = Aluno.objects.all()
-    return render(request, 'index.html', {"alunos": alunos})
+    return redirect(home)
 
 
 def editar_aluno(request):
     nome = request.POST.get("nome")
     email = request.POST.get("email")
-    Aluno.objects.create(nome=nome, email=email)
+    nascimento = request.POST.get("nascimento")
+    Aluno.objects.create(nome=nome, email=email, nascimento=nascimento)
     alunos = Aluno.objects.all()
-    return render(request, 'index.html', {"alunos": alunos})
+    return redirect(home)
 
 
 def editar(request, id):
@@ -39,9 +42,11 @@ def editar(request, id):
 def update(request, id):
     nome = request.POST.get("nome")
     email = request.POST.get("email")
+    nascimento = request.POST.get("nascimento")
     aluno = Aluno.objects.get(id=id)
     aluno.nome = nome
     aluno.email = email
+    aluno.nascimento = nascimento
     aluno.save()
     return redirect(home)
 
