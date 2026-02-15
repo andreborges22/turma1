@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset='utf-8'>
-            <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-            <title>Page Title</title>
-            <meta name='viewport' content='width=device-width, initial-scale=1'>
-            <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-            <script src='main.js'></script>
-        </head>
-    <body>
-        <hr>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <hr>
         <h1>Cadastro de Alunos</h1>
-            <form action="{% url 'criar_aluno' %}" method="post">  
-                {% csrf_token %} 
-                Nome
-                <input type="text" name="nome">
-                Email
-                <input type="email" name="email">
-                <button type="submit" value="Cadastrar Aluno" class="btn btn-sucess">Cadastrar</button>
+            <form action="{% url 'criar_aluno' %}" method="post" class="form-control">  
+                {% csrf_token %}                 
+                <label>Nome</label>
+                <input type="text" name="nome" placeholder="Digite seu nome" required="true">                
+                <label>Email</label>
+                <input type="text" name="email" placeholder="Digite seu email" required="true">
+                <button type="submit" value="Cadastrar Aluno" class="btn btn-success">Cadastrar</button>
             </form>
         <hr>
         <h1>Alunos Cadastrados</h1>    
@@ -27,6 +25,8 @@
         <th scope="col">ID</th>
         <th scope="col">Nome</th>
         <th scope="col">Email</th>      
+        <th scope="col">Editar</th>
+        <th scope="col">Apagar</th>
         </tr>
     </thead>
     <tbody>
@@ -36,15 +36,13 @@
                     <td>{{ aluno.id }}</td>
                     <td>{{ aluno.nome }}</td>
                     <td>{{ aluno.email }}</td>
+                    <td><a href="{% url  'editar' aluno.id %}"><button class="btn btn-warning">Editar</button></a></td>
+                    <td><a href="{% url  'deletar_aluno' aluno.id %}"></a><button class="btn btn-danger">Deletar</button></td>
                 </tr>
             {% endfor %}  
         </tr>
     </tbody>
     </table>
-                    
-        <hr>
-        <ul>
-        </ul>    
-    </body>
-    </html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
 </html>

@@ -20,7 +20,7 @@ def criar_aluno(request):
     email = request.POST.get("email")
     Aluno.objects.create(nome=nome, email=email)
     alunos = Aluno.objects.all()
-    return render(request, 'criar_aluno.html', {"alunos": alunos})
+    return render(request, 'index.html', {"alunos": alunos})
 
 
 def editar_aluno(request):
@@ -28,7 +28,7 @@ def editar_aluno(request):
     email = request.POST.get("email")
     Aluno.objects.create(nome=nome, email=email)
     alunos = Aluno.objects.all()
-    return render(request, 'criar_aluno.html', {"alunos": alunos})
+    return render(request, 'index.html', {"alunos": alunos})
 
 
 def editar(request, id):
@@ -46,7 +46,7 @@ def update(request, id):
     return redirect(home)
 
 
-def deletar_aluno(request, id):
+def deletar_aluno(id):
     aluno = Aluno.objects.get(id=id)
     aluno.delete()
     return redirect(home)
