@@ -41,7 +41,7 @@
                     <td>{{ aluno.email }}</td>
                     <td>{{ aluno.nascimento }}</td>
                     <td><a href="{% url  'editar' aluno.id %}"><button class="btn btn-link">Editar</button></a></td>
-                    <td><a href="{% url  'deletar_aluno' aluno.id %}"></a><button class="btn btn-danger">Deletar</button></td>
+                    <td><a href="{% url  'deletar_aluno' aluno.id %}"><button class="btn btn-danger">Deletar</button></a></td>
                 </tr>
             {% endfor %}  
         </tr>

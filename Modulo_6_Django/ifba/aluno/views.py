@@ -51,7 +51,7 @@ def update(request, id):
     return redirect(home)
 
 
-def deletar_aluno(id):
+def deletar_aluno(request, id):
     aluno = Aluno.objects.get(id=id)
     aluno.delete()
     return redirect(home)
