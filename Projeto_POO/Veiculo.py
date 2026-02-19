@@ -1,6 +1,6 @@
 class Veiculo:
     def dirigir(self):
-        return ""
+        return "teste"
 
     def descricao(self):
         return f"{self.__class__.__name__}: {self.dirigir()}"
@@ -23,3 +23,4 @@ veiculos = [Carro(), Moto(), Caminhao()]
 for v in veiculos:
 
     print(v.descricao())
+
