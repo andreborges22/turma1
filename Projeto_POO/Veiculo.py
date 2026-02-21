@@ -1,13 +1,13 @@
 class Veiculo:
     def dirigir(self):
-        return ""
+        return "O veículo está em movimento"
 
     def descricao(self):
         return f"{self.__class__.__name__}: {self.dirigir()}"
 
 class Carro(Veiculo):
     def dirigir(self):
-        return ""
+        return "Dirigindo!"
 
 class Moto(Veiculo):
     def dirigir(self):
@@ -23,3 +23,6 @@ veiculos = [Carro(), Moto(), Caminhao()]
 for v in veiculos:
 
     print(v.descricao())
+
+
+# teste mudança
